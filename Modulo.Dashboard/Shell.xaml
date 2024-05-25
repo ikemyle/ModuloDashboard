@@ -1,0 +1,21 @@
+﻿<mui:ModernWindow x:Class="Modulo.Dashboard.Shell"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  xmlns:app="clr-namespace:Modulo.Dashboard"
+                  Icon="pm.ico"
+                  Title="Prime Brokerage"
+                  IsTitleVisible="True"
+                  Width="1024" Height="700"
+                  WindowStartupLocation="CenterScreen"
+                  Closed="ModernWindow_Closed" Activated="ModernWindow_Activated">
+
+    <mui:ModernWindow.TitleLinks>
+        <mui:Link x:Name="lnkHome" DisplayName="Home" />
+        <mui:Link DisplayName="Admin" Source="/Views/UsersView.xaml" />
+        <mui:Link DisplayName="Settings" Source="/Views/SettingsView.xaml" />
+        <mui:Link DisplayName="Logout" Source="/Views/LogoutView.xaml" />
+        <!--<mui:Link DisplayName="Lock App" Source="/Views/AppLockoutView.xaml" />-->
+        <!--<mui:Link DisplayName="Help" Source="https://github.com/hinojosachapel/DynamicModules" />-->
+    </mui:ModernWindow.TitleLinks>
+</mui:ModernWindow>

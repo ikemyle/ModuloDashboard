@@ -1,0 +1,11 @@
+{
+  "UISetting": {
+    "theme": "/Themes/DarkTheme.xaml",
+    "accentcolor": "#FF87794E",
+    "fontsize": "large"
+  },
+  "CustomSettings": {
+    "StartGroupModule": "IT Admin",
+    "StartPage": "Users"
+  }
+}

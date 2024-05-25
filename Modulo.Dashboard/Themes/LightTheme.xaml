@@ -1,0 +1,67 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mui="http://firstfloorsoftware.com/ModernUI">
+
+    <Rectangle x:Key="WindowBackgroundContent" x:Shared="false" Margin="0">
+        <Rectangle.Fill>
+            <LinearGradientBrush StartPoint="0, 0" EndPoint="0, .3" Opacity=".1">
+                <GradientStop Offset="0" Color="{DynamicResource AccentColor}" />
+                <GradientStop Offset=".2" Color="{DynamicResource AccentColor}" />
+                <GradientStop Offset="1" Color="Transparent" />
+            </LinearGradientBrush>
+        </Rectangle.Fill>
+    </Rectangle>
+    <Style x:Key="BordLogin" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="Silver"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Focusable" Value="False"/>
+    </Style>
+
+    <Style x:Key="WinLogin" TargetType="{x:Type Window}">
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentColor}"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush Stretch="Fill" ImageSource="Images/login.jpg"></ImageBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="Silver"/>
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <Style x:Key="PassHolder" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="Silver"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Focusable" Value="False"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Border.BorderBrush" Value="Silver" />
+                <Setter Property="Border.BorderThickness" Value="1" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="false">
+                <Setter Property="Border.Background" Value="White" />
+                <Setter Property="Border.BorderBrush" Value="Silver" />
+                <Setter Property="Border.BorderThickness" Value="1" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="PassViewer" TargetType="Image">
+        <Setter Property="Source" Value="Images\PasswordEyeBlack.png"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+
+    <Style x:Key="ImgLogo" TargetType="Image">
+        <Setter Property="Source" Value="Images\logo.png"/>
+    </Style>
+    
+    <Style x:Key="LoginImage" TargetType="Image">
+        <Setter Property="Source" Value="Images\login.jpg"/>
+    </Style>
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FirstFloor.ModernUI;component/Assets/ModernUI.Light.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

@@ -1,0 +1,71 @@
+﻿<Window xmlns:my="http://schemas.modernwpf.com/2019" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Controls="clr-namespace:Modulo.Dashboard.Controls" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        KeyboardNavigation.TabNavigation="Local"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="Modulo.Dashboard.LoginWindow"        
+         Style="{DynamicResource WinLogin}"
+        mc:Ignorable="d"
+        Height="420" Width="760" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
+        WindowStyle="None" MouseDown="Window_MouseDown" Icon="pm.ico" Activated="Window_Activated"
+        FocusManager.FocusedElement="{Binding ElementName=txtLoginId}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/CustomUI.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left" Name="WindowTitle" VerticalAlignment="Center"  Style="{DynamicResource LoginLabels}" Margin="5,2,2,2" FontSize="16" ></TextBlock>
+            <Grid DockPanel.Dock="Right"
+      HorizontalAlignment="Right">
+
+                <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center">
+                    <Button x:Name="CloseButton" KeyboardNavigation.IsTabStop="False" Style="{DynamicResource btn-danger}" Content="x"/>
+
+                </StackPanel>
+            </Grid>
+        </DockPanel>
+        <Border BorderThickness="1" Name="bordLogin" Grid.Row="1" Focusable="False" Margin="10" Style="{DynamicResource BordLogin}" >
+            <!--<Border.Effect>
+            <DropShadowEffect />
+        </Border.Effect>-->
+
+            <Grid Height="Auto" Style="{StaticResource ContentRoot}" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Margin="10,35,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image VerticalAlignment="Top" Focusable="False" Style="{DynamicResource ImgLogo}"></Image>
+                    <TextBlock Grid.Row="1" Focusable="False" Text="Login" Margin="10" Style="{DynamicResource LoginLabels}" ></TextBlock>
+                    <TextBox Grid.Row="1" Name="txtLoginId" TabIndex="0" Text="{Binding LoginId, Mode=TwoWay}" Margin="90,5,15,10" VerticalContentAlignment="Center"></TextBox>
+                    <TextBlock Grid.Row="2" Focusable="False" Text="Password" Style="{DynamicResource LoginLabels}" Margin="10"></TextBlock>
+                    <Controls:ExtPasswordBox x:Name="extPasswordBox" Grid.Row="2" KeyboardNavigation.TabNavigation="Local" TabIndex="1" Margin="90,5,15,10" />
+                    <DockPanel Name="dockLoginError" Grid.Row="3" Margin="90 0 0 0" Visibility="Visible">
+                        <Image Source="cancel-icon.png"  Height="24" DockPanel.Dock="Left"></Image>
+                        <TextBlock DockPanel.Dock="Left" Foreground="Red" FontWeight="Bold" Margin="7" VerticalAlignment="Center" Text="Invalid user credentials"></TextBlock>
+                    </DockPanel>
+                    <Button Grid.Row="4" Name="btnLogin" Margin="200,35,20,50" Width="100" TabIndex="2" Content="Login" />
+                    <Button Grid.Row="4" Name="btnCancel" Margin="90,35,140,50" Width="100" TabIndex="3" VerticalContentAlignment="Center" Content="Cancel" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
